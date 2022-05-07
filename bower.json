@@ -1,0 +1,17 @@
+{
+  "name": "websockets",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "KananValizada <kenan.veli@yahoo.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
