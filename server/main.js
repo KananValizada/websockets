@@ -57,6 +57,17 @@ io.on("connection", function (socket) {
     messages.push(d);
     io.sockets.emit("messages", messages);
   });
+
+  socket.on("update-message", (d) => {
+    let message = messages.filter((m) => {
+      console.log(m.messageId, d.messageId);
+      return m.messageId == d.messageId;
+    })[0];
+
+    message.likedBy = d.likedBy;
+
+    io.sockets.emit("messages", messages);
+  });
 });
 
 server.listen(80);

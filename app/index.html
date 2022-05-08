@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <h1>My App</h1>
     <div id="messages"></div>
 
-    <form class="fooorr" id="form">
+    <form class="fooorr" onsubmit="return addMessage(this)">
       <!-- <button type="submit" name="button">Add a new message</button> -->
       <div class="username">
         <input
@@ -41,7 +42,5 @@
         value="Send!"
       />
     </form>
-
-    <script src="main.js"></script>
   </body>
 </html>
