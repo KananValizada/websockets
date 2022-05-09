@@ -19,6 +19,7 @@ function render() {
   let data = messageCache;
 
   let html = data
+    .sort((a, b) => a.ts - b.ts)
     .map((d, index) => {
       return `<form class='message' onsubmit="return likeMessage(messageCache[${index}])">
             <div class='name'>
@@ -27,7 +28,10 @@ function render() {
           <a href=${d.content.link} class='message' target=blank>
             ${d.content.text}
           </a>
-          <input type=submit class="likes-count" value="${d.likedBy.length} Likes">
+          <div class=time> ${moment(d.ts).fromNow()} </div>
+          <input type=submit class="likes-count" value="${
+            d.likedBy.length
+          } Likes">
           </form>
           `;
     })
